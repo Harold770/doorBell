@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "firebase": "^9.14.0",
+    "gh-pages": "^4.0.0",
     "vue": "^3.2.41",
     "vuefire": "^3.0.0-alpha.11"
   },
