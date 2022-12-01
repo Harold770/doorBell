@@ -2,6 +2,7 @@
 import { useDatabase } from 'vuefire'
 import { useList } from 'vuefire'
 import { ref as dbRef } from 'firebase/database'
+import HelloWorld from './components/HelloWorld.vue';
 const db = useDatabase()
 const salones = useList(dbRef(db, 'Salones'))
 </script>
@@ -16,37 +17,26 @@ const salones = useList(dbRef(db, 'Salones'))
         <table class="table table-striped table-bordered">
           <thead>
             <tr>
-              <th scope="col">#</th>
-              <th scope="col">First</th>
-              <th scope="col">Last</th>
-              <th scope="col">Handle</th>
+              <th scope="col">Laboratorio</th>
+              <th scope="col">Entrada</th>
+              <th scope="col">Salida</th>
+              <th scope="col">Maestro</th>
+              <th scope="col">Estatus</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td colspan="2">Larry the Bird</td>
-              <td>@twitter</td>
+            <tr v-for="salon in salones">
+              <td>{{ salon.Name }}</td>
+              <td>{{ salon.HoraEntrada }}</td>
+              <td>{{ salon.HoraSalida }}</td>
+              <td>{{ salon.Maestro }}</td>
+              <td>
+                <button v-if=salon.Status type="button" class="btn btn-success">Success</button>
+                <button v-else type="button" class="btn btn-danger">Ocupado</button>
+              </td>
             </tr>
           </tbody>
         </table>
-        <ul>
-          <li v-for="salon in salones" >
-            <span>{{ salon.Name }}</span>
-          </li>
-        </ul>
       </div>
     </div>
   </div>
