@@ -16,7 +16,7 @@ export default defineConfig({
       },
     }),
   ],
-  base: "/doorBell/",
+  base: "/",
   includeAssets: ["favicon.ico", "apple-touch-icon.png", "android-chrome-192x192.png", "android-chrome-512x512.png"],
   manifest: {
     name: "DoorBell",
