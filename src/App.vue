@@ -25,7 +25,6 @@ window.addEventListener('beforeinstallprompt', (e) => {
             <tr>
               <th scope="col">Laboratorio</th>
               <th scope="col">Entrada</th>
-              <th scope="col">Salida</th>
               <th scope="col">Maestro</th>
               <th scope="col">Estatus</th>
             </tr>
@@ -34,10 +33,9 @@ window.addEventListener('beforeinstallprompt', (e) => {
             <tr v-for="salon in salones">
               <td>{{ salon.Name }}</td>
               <td>{{ salon.HoraEntrada }}</td>
-              <td>{{ salon.HoraSalida }}</td>
               <td>{{ salon.Maestro }}</td>
               <td>
-                <button v-if=salon.Status type="button" class="btn btn-success">Success</button>
+                <button v-if=salon.Status type="button" class="btn btn-success">Disponible</button>
                 <button v-else type="button" class="btn btn-danger">Ocupado</button>
               </td>
             </tr>
