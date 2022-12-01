@@ -5,6 +5,12 @@ import { ref as dbRef } from 'firebase/database'
 import HelloWorld from './components/HelloWorld.vue';
 const db = useDatabase()
 const salones = useList(dbRef(db, 'Salones'))
+
+let deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+    deferredPrompt = e;
+});
 </script>
 
 <template>
