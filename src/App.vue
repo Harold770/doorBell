@@ -14,7 +14,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
 </script>
 
 <template>
-  <nav class="navbar navbar-dark bg-primary">
+  <nav class="navbar navbar-dark bg-primary justify-content-center">
     <a href="/" class="navbar-brand">Salones ocupados</a>
   </nav>
   <div class="container">
