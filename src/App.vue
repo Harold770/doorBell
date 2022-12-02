@@ -35,8 +35,9 @@ window.addEventListener('beforeinstallprompt', (e) => {
               <td>{{ salon.HoraEntrada }}</td>
               <td>{{ salon.Maestro }}</td>
               <td>
-                <button v-if=salon.Status type="button" class="btn btn-success">Disponible</button>
-                <button v-else type="button" class="btn btn-danger">Ocupado</button>
+                <button v-if=salon.Status type="button" class="btn btn-danger">Ocupado</button>
+                <button v-else type="button" class="btn btn-success">Disponible</button>
+                
               </td>
             </tr>
           </tbody>
